@@ -1,0 +1,125 @@
+[class^="button"]
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  height: 48px
+  padding: 0 24px
+  background: $p1
+  border-radius: 24px
+  +button-1
+  text-align: center
+  color: $n8
+  transition: all .2s
+  &:hover
+    background: darken($p1, 15)
+  &:disabled,
+  &.disabled
+    opacity: .5
+    pointer-events: none
+  svg
+    fill: $n8
+    transition: all .2s
+  &:not([class^="button-circle"])
+    svg
+      &:first-child
+        margin-right: 12px
+      &:last-child
+        margin-left: 12px
+
+.button-stroke
+  background: none
+  box-shadow: 0 0 0 2px $n6 inset
+  color: $n2
+  svg
+    fill: $n4
+  +dark-common
+    box-shadow: 0 0 0 2px $n3 inset
+    color: $n8
+    svg
+      fill: $n8
+  &:hover,
+  &.active
+    background: $n2
+    box-shadow: 0 0 0 2px $n2 inset
+    color: $n8
+    svg
+      fill: $n8
+    +dark-common
+      background: $n3
+      box-shadow: 0 0 0 2px $n3 inset
+
+.button-black
+  background: $n1
+  &:hover,
+  &.active
+    background: $n2
+  +dark-common
+    background: $n7
+    color: $n2
+    svg
+      fill: $n2
+    &:hover,
+    &.active
+      background: $n6
+
+.button-red
+  background: $p3
+  &:hover,
+  &.active
+    background: darken($p3, 8)
+
+.button-green
+  background: $p4
+  &:hover,
+  &.active
+    background: darken($p4, 8)
+
+.button-white
+  background: $n8
+  color: $n2
+  svg
+    fill: $n2
+  &:hover
+    background: $n7
+
+.button-small
+  height: 40px
+  border-radius: 20px
+  padding: 0 16px
+  font-size: 14px
+
+.button-circle
+  flex: 0 0 48px
+  width: 48px
+  height: 48px
+  padding: 0
+  border-radius: 50%
+
+.button-circle-stroke
+  flex: 0 0 48px
+  width: 48px
+  height: 48px
+  padding: 0
+  border-radius: 50%
+  box-shadow: 0 0 0 2px $n6 inset
+  background: transparent
+  transition: all .2s
+  svg
+      fill: $n4
+  &:hover
+      background: $n2
+      box-shadow: 0 0 0 2px $n2 inset
+      svg
+          fill: $n8
+  +dark-common
+    box-shadow: 0 0 0 2px $n3 inset
+    &:hover
+      background: $n3
+
+.button-circle-stroke.button-small
+  flex: 0 0 40px
+  width: 40px
+  height: 40px
+
+
+

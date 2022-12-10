@@ -1,0 +1,79 @@
+@import ../../shared/assets/styles/helpers
+
+.theme
+    display: inline-block
+    position: relative
+    user-select: none 
+    cursor: pointer
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    font-size: 0
+
+.input
+    position: absolute
+    top: 0
+    left: 0
+    opacity: 0
+    &:checked + .inner .box
+        background: $p1
+        &:before
+            transform: translate(24px,-50%)
+            background: $n8
+    &:checked + .icon
+        svg
+            &:first-child
+                display: none
+            &:nth-child(2)
+                display: inline-block 
+
+.inner
+    position: relative
+    display: inline-block
+    transition: all .2s
+
+.box
+    position: relative
+    display: block
+    width: 48px
+    height: 24px
+    background: $n6
+    border-radius: 12px 
+    transition: all .2s
+    +dark
+        background: $n3
+    &:before
+        content: ""
+        position: absolute
+        top: 50%
+        left: 4px
+        transform: translateY(-50%)
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        background: $p1
+        transition: all .2s 
+
+.icon
+    width: 24px
+    height: 24px
+    svg
+        fill: $n4
+        transition: fill .2s
+        &:nth-child(2)
+            display: none
+    &:hover
+        svg
+            fill: $n2
+            +dark
+                fill: $n8
+
+.small
+    .box
+        width: 40px
+        height: 20px
+        &:before
+            width: 12px
+            height: 12px
+    .input
+        &:checked + .inner .box
+            &:before
+                transform: translate(20px,-50%)

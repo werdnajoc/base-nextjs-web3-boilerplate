@@ -1,0 +1,67 @@
+#root
+    display: flex
+    justify-content: center
+
+// common styles
+body
+    min-width: 375px
+    background: $n8
+    +poppins
+    font-size: 14px
+    line-height: (24/14)
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    color: $n2
+    +dark-body
+        background: $n1
+        color: $n8
+
+a
+    text-decoration: none
+
+svg,
+img
+    vertical-align: middle
+
+.desktop
+    &-hide
+        +d
+            display: none !important
+    &-show
+        display: none !important
+        +d
+            display: block !important
+    &-text-right
+        +d
+            text-align: right
+
+.tablet
+    &-hide
+        +t
+            display: none !important
+    &-show
+        display: none !important
+        +t
+            display: block !important
+            
+.mobile
+    &-hide
+        +m
+            display: none !important
+    &-show
+        display: none !important
+        +m
+            display: block !important
+
+[data-theme='dark'],
+[data-theme='dark'] body
+    color: #fff
+    background: #000
+
+:root[data-theme="dark"]
+    color: #fff
+    background: #000
+
+.dark
+    color: #fff
+    background: #000

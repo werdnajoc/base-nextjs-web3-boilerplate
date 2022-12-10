@@ -1,0 +1,31 @@
+.sorting
+    position: relative
+    display: inline-block
+    padding-right: 16px
+    cursor: pointer
+    &:before,
+    &:after
+        content: ""
+        position: absolute
+        right: 0
+        width: 7px
+        height: 4px
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        background-size: 100% auto
+    &:before
+        top: calc(50% - 5px)
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='4' fill='none' viewBox='0 0 7 4'%3E%3Cpath fill-rule='evenodd' d='M1.148 3.804c.26.26.682.26.943 0l1.862-1.862 1.862 1.862c.26.26.682.26.943 0s.26-.682 0-.943L4.425.528c-.26-.26-.682-.26-.943 0L1.148 2.862c-.26.26-.26.682 0 .943z' fill='%23777e91'/%3E%3C/svg%3E")
+    &:after
+        top: calc(50% + 1px)
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='4' fill='none' viewBox='0 0 7 4'%3E%3Cpath fill-rule='evenodd' d='M1.148.195c.26-.26.682-.26.943 0l1.862 1.862L5.815.195c.26-.26.682-.26.943 0s.26.682 0 .943L4.425 3.471c-.26.26-.682.26-.943 0L1.148 1.137c-.26-.26-.26-.682 0-.943z' fill='%23777e91'/%3E%3C/svg%3E")
+    &.up
+        &:before
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='4' fill='none' viewBox='0 0 7 4'%3E%3Cpath fill-rule='evenodd' d='M1.148 3.804c.26.26.682.26.943 0l1.862-1.862 1.862 1.862c.26.26.682.26.943 0s.26-.682 0-.943L4.425.528c-.26-.26-.682-.26-.943 0L1.148 2.862c-.26.26-.26.682 0 .943z' fill='%2323262F'/%3E%3C/svg%3E")
+        &:after
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='4' fill='none' viewBox='0 0 7 4'%3E%3Cpath fill-rule='evenodd' d='M1.148.195c.26-.26.682-.26.943 0l1.862 1.862L5.815.195c.26-.26.682-.26.943 0s.26.682 0 .943L4.425 3.471c-.26.26-.682.26-.943 0L1.148 1.137c-.26-.26-.26-.682 0-.943z' fill='%23B1B5C3'/%3E%3C/svg%3E")
+    &.down
+        &:before
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='4' fill='none' viewBox='0 0 7 4'%3E%3Cpath fill-rule='evenodd' d='M1.148 3.804c.26.26.682.26.943 0l1.862-1.862 1.862 1.862c.26.26.682.26.943 0s.26-.682 0-.943L4.425.528c-.26-.26-.682-.26-.943 0L1.148 2.862c-.26.26-.26.682 0 .943z' fill='%23B1B5C3'/%3E%3C/svg%3E")
+        &:after
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='4' fill='none' viewBox='0 0 7 4'%3E%3Cpath fill-rule='evenodd' d='M1.148.195c.26-.26.682-.26.943 0l1.862 1.862L5.815.195c.26-.26.682-.26.943 0s.26.682 0 .943L4.425 3.471c-.26.26-.682.26-.943 0L1.148 1.137c-.26-.26-.26-.682 0-.943z' fill='%2323262F'/%3E%3C/svg%3E")

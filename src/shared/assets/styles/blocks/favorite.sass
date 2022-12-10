@@ -1,0 +1,25 @@
+.favorite
+    position: relative
+    width: 16px
+    height: 16px
+    svg
+        fill: $n4
+        transition: all .2s
+    &:after
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath d='M7.388 2.085a.67.67 0 0 1 1.224 0l1.453 3.368c.098.227.314.381.561.401l3.727.288a.67.67 0 0 1 .373 1.179l-2.803 2.314c-.198.163-.284.425-.223.674l.863 3.486a.67.67 0 0 1-.985.735l-3.24-1.907c-.209-.123-.468-.123-.676 0l-3.24 1.907a.67.67 0 0 1-.985-.735l.863-3.486c.062-.249-.025-.511-.223-.674L1.273 7.32a.67.67 0 0 1 .373-1.179l3.727-.288c.247-.019.463-.173.561-.401l1.453-3.368z' fill='%23ffd166'/%3E%3C/svg%3E") no-repeat 50% 50% / 100% auto
+        opacity: 0
+        transition: opacity .2s
+    &:hover
+        svg
+            fill: $s3
+    &.active
+        svg
+            opacity: 0
+        &:after
+            opacity: 1
