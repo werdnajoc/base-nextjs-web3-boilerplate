@@ -1,6 +1,6 @@
 {
   "name": "base-nextjs-web3-boilerplate",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "license": "MIT",
   "author": "Andrew Ortiz <contacto@andrewortiz.dev> (https://andrewortiz.dev/)",
@@ -50,6 +50,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
+    "conventional-changelog-cli": "^2.2.2",
     "husky": "^8.0.2"
   }
 }
