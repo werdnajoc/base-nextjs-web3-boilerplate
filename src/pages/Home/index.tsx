@@ -13,11 +13,11 @@ import styles from './styles.module.sass'
 import { Countries } from 'components/Countries'
 
 import { gql } from '@apollo/client'
-import { countryExampleClient } from 'providers/apollo'
+import { apolloClient } from 'providers/apollo'
 
 // @TODO graphql example for getServerSideProps and getServerSideProps
 export async function getServerSideProps() {
-  const { data } = await countryExampleClient.query({
+  const { data } = await apolloClient.query({
     query: gql`
       query Countries {
         countries {
