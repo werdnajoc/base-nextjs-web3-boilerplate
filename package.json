@@ -1,6 +1,6 @@
 {
   "name": "base-nextjs-web3-boilerplate",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "private": true,
   "license": "MIT",
   "author": "Andrew Ortiz <contacto@andrewortiz.dev> (https://andrewortiz.dev/)",
@@ -16,7 +16,9 @@
     "lint": "next lint",
     "fc": "npx prettier --check ./src",
     "ff": "npx prettier --write ./src",
-    "compile-contract-types": "typechain --target ethers-v5 --out-dir \"src/contracts/types\" \"src/contracts/*.json\""
+    "compile-contract-types": "typechain --target ethers-v5 --out-dir \"src/contracts/types\" \"src/contracts/*.json\"",
+    "prepare": "husky install",
+    "version": "conventional-changelog -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "dependencies": {
     "@apollo/client": "^3.7.2",
@@ -45,5 +47,11 @@
     "typescript": "4.9.3",
     "use-dark-mode": "^2.3.1",
     "wagmi": "^0.8.10"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "conventional-changelog-cli": "^2.2.2",
+    "husky": "^8.0.2"
   }
 }

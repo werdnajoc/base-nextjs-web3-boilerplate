@@ -20,6 +20,11 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Documentation
 
+#### Commit rules
+
+    1. [conventionalcommits](https://www.conventionalcommits.org/en/v1.0.0/)
+    2. {OPTIONAL BUT it makes me happy :green_heart: }: [gitmoji](https://gitmoji.dev/)
+
 #### Add translations
 
     1. Go to folder public/lang langName.json
