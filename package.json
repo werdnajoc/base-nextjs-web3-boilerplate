@@ -17,7 +17,8 @@
     "fc": "npx prettier --check ./src",
     "ff": "npx prettier --write ./src",
     "compile-contract-types": "typechain --target ethers-v5 --out-dir \"src/contracts/types\" \"src/contracts/*.json\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "version": "conventional-changelog -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "dependencies": {
     "@apollo/client": "^3.7.2",
