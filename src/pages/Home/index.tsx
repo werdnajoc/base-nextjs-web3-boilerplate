@@ -1,7 +1,7 @@
-import react from 'react'
+import React from 'react'
 import { useNetwork, useSwitchNetwork, useAccount, useBalance, useSignMessage } from 'wagmi'
 import ConnectWallet from 'components/Connect/ConnectWallet'
-import { useConnectModal, useAccountModal, useChainModal } from '@rainbow-me/rainbowkit'
+import { gql } from '@apollo/client'
 
 import { ThemeToggleButton } from 'components/Theme'
 import { useInternationalisation } from 'providers/lang'
@@ -11,12 +11,22 @@ import { useERC20Balance } from 'services/web3/ERC20'
 import styles from './styles.module.sass'
 
 import { Countries } from 'components/Countries'
+import { IncrementCounter } from 'components/IncrementCounter'
 
-import { gql } from '@apollo/client'
 import { apolloClient } from 'providers/apollo'
+import { reduxWrapper } from 'providers/redux'
+import { increment as incrementAction } from 'components/IncrementCounter/redux/actions'
 
 // @TODO graphql example for getServerSideProps and getServerSideProps
-export async function getServerSideProps() {
+export const getServerSideProps = reduxWrapper.getServerSideProps(store => async () => {
+  store.dispatch(
+    incrementAction({
+      data: {
+        count: 7,
+      },
+    })
+  )
+
   const { data } = await apolloClient.query({
     query: gql`
       query Countries {
@@ -34,10 +44,9 @@ export async function getServerSideProps() {
       countries: data.countries.slice(0, 4),
     },
   }
-}
+})
 
 export default function Home({ countries }: any) {
-  console.log('countries: ', countries)
   return (
     <div className={styles.container}>
       <Header />
@@ -71,10 +80,6 @@ function Main() {
   })
   const { setLang, t } = useInternationalisation()
 
-  const { openConnectModal } = useConnectModal()
-  const { openAccountModal } = useAccountModal()
-  const { openChainModal } = useChainModal()
-
   const { state: erc20BalanceState, fetchBalance } = useERC20Balance({
     address: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
   })
@@ -95,6 +100,8 @@ function Main() {
         Spanish
       </button>
 
+      <br />
+      <IncrementCounter />
       <br />
       <Countries />
     </main>

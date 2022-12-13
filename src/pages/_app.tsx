@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import 'shared/assets/styles/app.sass'
 
 import HeadGlobal from 'components/HeadGlobal'
+import { reduxWrapper } from 'providers/redux'
 import { AppProviders } from 'providers'
 
 function App({ Component, pageProps }: AppProps) {
@@ -58,4 +59,4 @@ function App({ Component, pageProps }: AppProps) {
     </AppProviders>
   )
 }
-export default App
+export default reduxWrapper.withRedux(App)
