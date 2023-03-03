@@ -1,13 +1,3 @@
-import addresses from 'config/constants/contracts'
-import { Address } from 'config/constants/types'
-
-import { ChainId } from 'global/enums'
-
-export const getAddress = (address: Address): string => {
-  const chainId = process.env.REACT_APP_CHAIN_ID
-  return address[chainId] ? address[chainId] : address[ChainId.MAINNET]
-}
-
 export const truncateText = (str, n) =>
   str.length > n ? `${str.substr(0, n - 1)}...` : str
 

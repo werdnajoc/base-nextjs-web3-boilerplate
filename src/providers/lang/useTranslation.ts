@@ -3,13 +3,13 @@ import { useIntl } from 'react-intl'
 
 import { InternationalisationContext } from './Provider'
 
-export const useInternationalisation = () => {
+export const useTranslation = () => {
   const context = useContext(InternationalisationContext)
   const intl = useIntl()
 
   const t = useCallback(
     (id: string): string => {
-      return intl.formatMessage({ id })
+      return intl.formatMessage({ id, defaultMessage: id })
     },
     [intl]
   )
@@ -24,4 +24,3 @@ export const useInternationalisation = () => {
   }
 }
 
-export default useInternationalisation

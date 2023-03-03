@@ -4,7 +4,7 @@ import ConnectWallet from 'components/Connect/ConnectWallet'
 import { gql } from '@apollo/client'
 
 import { ThemeToggleButton } from 'components/Theme'
-import { useInternationalisation } from 'providers/lang'
+import { useTranslation } from 'providers/lang'
 
 import { useERC20Balance } from 'services/web3/ERC20'
 
@@ -78,7 +78,7 @@ function Main() {
   const { data: balance, isLoading: isBalanceLoading } = useBalance({
     address: address,
   })
-  const { setLang, t } = useInternationalisation()
+  const { setLang, t } = useTranslation()
 
   const { state: erc20BalanceState, fetchBalance } = useERC20Balance({
     address: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',

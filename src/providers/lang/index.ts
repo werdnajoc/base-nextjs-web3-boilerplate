@@ -1,4 +1,2 @@
-import { InternationalisationProvider } from './Provider'
-import { useInternationalisation } from './useInternationalisation'
-
-export { InternationalisationProvider, useInternationalisation }
+export { InternationalisationProvider } from './Provider'
+export { useTranslation } from './useTranslation'

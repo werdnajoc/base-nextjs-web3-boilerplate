@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { useInternationalisation } from 'providers/lang'
+import { useTranslation } from 'providers/lang'
 import { useCounter } from './redux/hooks'
 
 export const IncrementCounter = () => {
   const [counter, addCounter] = useCounter()
-  const { t } = useInternationalisation()
+  const { t } = useTranslation()
   return (
     <div>
       <h1>
