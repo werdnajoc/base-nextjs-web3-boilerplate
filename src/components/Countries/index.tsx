@@ -4,10 +4,13 @@ import { useBeforeFirstRender } from 'shared/hooks/commons'
 import { useGetCountries } from 'shared/hooks/trevorblades'
 
 import { ClientOnly } from 'components/ClientOnly'
+import { BaseSelect } from 'components/BaseSelect'
+import { useTranslation } from 'providers/lang'
 
 export const Countries = ({ className, icon, small }: any) => {
   const [mounted, setMounted] = useState(false)
   const { state, fetchCountries } = useGetCountries()
+  const { t } = useTranslation()
 
   useBeforeFirstRender(() => {
     fetchCountries()
@@ -19,11 +22,15 @@ export const Countries = ({ className, icon, small }: any) => {
   return (
     <ClientOnly>
       {state.success && (
-        <select>
-          {state.data.map(row => (
-            <option key={row.code}>{row.name}</option>
-          ))}
-        </select>
+        <BaseSelect
+          onChange={value => {}}
+          defaultValue={t('components.countries.select.defaultValue')}
+          options={state.data.map(row => ({
+            value: row.code,
+            label: row.name,
+            keyId: row.code,
+          }))}
+        />
       )}
     </ClientOnly>
   )

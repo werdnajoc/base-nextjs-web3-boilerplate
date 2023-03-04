@@ -1,3 +1,4 @@
 {
-  "page.home.title": "Hello"
+  "page.home.title": "Hello",
+  "components.countries.select.defaultValue": "Select a country"
 }
