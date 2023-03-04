@@ -17,6 +17,7 @@ import { IncrementCounter } from 'components/IncrementCounter'
 import { apolloClient } from 'providers/apollo'
 import { reduxWrapper } from 'providers/redux'
 import { setCounterState } from 'components/IncrementCounter/redux/counterSlice'
+import { BaseButton } from 'components/BaseButton'
 
 // @TODO graphql example for getServerSideProps and getServerSideProps
 export const getServerSideProps = reduxWrapper.getServerSideProps(store => async ({ params }) => {
@@ -87,14 +88,9 @@ function Main() {
     <main className={styles.container}>
       {t('page.home.title')}
 
-      <button className="button" onClick={() => setLang({ lang: 'en' })}>
-        English
-      </button>
+      <BaseButton text={'English'} onClick={() => setLang({ lang: 'en' })} />
       <br />
-      <button className="button" onClick={() => setLang({ lang: 'es' })}>
-        Spanish
-      </button>
-
+      <BaseButton text={'Spanish'} onClick={() => setLang({ lang: 'es' })} />
       <br />
       <IncrementCounter />
       <br />

@@ -2,6 +2,7 @@ import React from 'react'
 import { useTranslation } from 'providers/lang'
 
 import { useCounter } from 'components/IncrementCounter/redux/hooks'
+import { BaseButton } from 'components/BaseButton'
 
 export const IncrementCounter = () => {
   const [counter, addCounter] = useCounter()
@@ -12,9 +13,7 @@ export const IncrementCounter = () => {
       <h1>
         {t('Redux counter')}: <span>{counter}</span>
       </h1>
-      <button className="button" onClick={() => addCounter()}>
-        {t('Add To Count')}
-      </button>
+      <BaseButton text={t('Add To Count')} onClick={() => addCounter()} />
     </div>
   )
 }
