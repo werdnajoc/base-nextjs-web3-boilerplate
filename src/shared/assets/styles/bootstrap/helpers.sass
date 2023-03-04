@@ -58,53 +58,6 @@ $n7: #F4F5F6
 $n8: #FCFCFD
 
 $n9: #18191D
-    
-//triangle
-=arr($width, $height, $bg, $direction)
-    width: 0px
-    height: 0px
-    border-style: solid
-    @if $direction == t
-        border-width: 0 $width / 2 + px $height + px $width / 2 + px
-        border-color: transparent transparent $bg transparent
-    @if $direction == r
-        border-width: $height / 2 + px 0 $height / 2 + px $width + px
-        border-color: transparent transparent transparent $bg
-    @if $direction == b
-        border-width: $height + px $width / 2 + px 0 $width / 2 + px
-        border-color: $bg transparent transparent transparent
-    @if $direction == l
-        border-width: $height / 2 + px $width + px $height / 2 + px 0
-        border-color: transparent $bg transparent transparent
-    @if $direction == tl
-        border-width: $height + px $width + px 0 0
-        border-color: $bg transparent transparent transparent
-    @if $direction == tr
-        border-width: 0 $width + px $height + px 0
-        border-color: transparent $bg transparent transparent
-    @if $direction == br
-        border-width: 0 0 $height + px $width + px
-        border-color: transparent transparent $bg transparent
-    @if $direction == bl
-        border-width: $width + px 0 0 $height + px
-        border-color: transparent transparent transparent $bg
-// example
-// +arr(500,50, #000, l)
-// +arr(500,50, #000, bl)
-
-// placeholder
-=placeholder
-    &::placeholder
-        @content
-
-// media query width
-=r($width)
-    @media only screen and (max-width: $width+ "px")
-        @content
-
-=rmin($width)
-    @media only screen and (min-width: $width+ "px")
-        @content
 
 =text-overflow
     overflow: hidden
