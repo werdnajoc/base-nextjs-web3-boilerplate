@@ -42,8 +42,6 @@ export const getServerSideProps = reduxWrapper.getServerSideProps(store => async
 })
 
 export default function Home({ countries }: any) {
-  console.log('countries ', countries)
-
   return (
     <div className={styles.container}>
       <Header />
