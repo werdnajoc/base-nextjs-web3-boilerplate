@@ -1,4 +1,6 @@
 {
   "page.home.title": "Hola",
-  "components.countries.select.defaultValue": "Seleccione un pais"
+  "components.countries.select.defaultValue": "Seleccione un pais",
+  "components.incrementContainer.title": "Redux contador",
+  "components.incrementContainer.action.text": "Sumar al contrador"
 }

@@ -11,9 +11,9 @@ export const IncrementCounter = () => {
   return (
     <div>
       <h1>
-        {t('Redux counter')}: <span>{counter}</span>
+        {t('components.incrementContainer.title')}: <span>{counter}</span>
       </h1>
-      <BaseButton text={t('Add To Count')} onClick={() => addCounter()} />
+      <BaseButton text={t('components.incrementContainer.action.text')} onClick={() => addCounter()} />
     </div>
   )
 }

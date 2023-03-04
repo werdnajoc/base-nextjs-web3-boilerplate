@@ -1,4 +1,6 @@
 {
   "page.home.title": "Hello",
-  "components.countries.select.defaultValue": "Select a country"
+  "components.countries.select.defaultValue": "Select a country",
+  "components.incrementContainer.title": "Redux Counter",
+  "components.incrementContainer.action.text": "Add to count"
 }
