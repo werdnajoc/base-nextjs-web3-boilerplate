@@ -1,25 +1,25 @@
-interface IBaseState {
+interface IBaseASyncState {
   loading?: boolean
   success?: boolean
   error?: string
 }
 
-export interface IArrayDataState extends IBaseState {
+export interface IASyncArrayState extends IBaseASyncState {
   data?: any[]
 }
 
-export interface IAnyDataState extends IBaseState {
+export interface IASyncAnyState extends IBaseASyncState {
   data?: any
 }
 
-export const initialStateWithArrayData: IArrayDataState = {
+export const initialAsyncArrayState: IASyncArrayState = {
   loading: false,
   success: false,
   error: null,
   data: [],
 }
 
-export const initialStateData: IAnyDataState = {
+export const initialAsyncAnyState: IASyncAnyState = {
   loading: false,
   success: false,
   error: null,

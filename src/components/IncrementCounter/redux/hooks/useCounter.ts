@@ -1,23 +1,17 @@
 import { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { increment as incrementAction } from '../actions'
-import { ICounterState } from '../interfaces'
-import { AppDispatch, AppState } from 'providers/redux/store'
+import { setCounterState, selectCounterState } from '../counterSlice'
 
-export function useCounter(): [ICounterState, () => void] {
-  const dispatch = useDispatch<AppDispatch>()
-  const counter = useSelector<AppState, AppState['counter']>(state => state.counter)
+export function useCounter(): [number, () => void] {
+  const dispatch = useDispatch()
+  const counterState = useSelector(selectCounterState)
 
   const addCounter = useCallback(() => {
     dispatch(
-      incrementAction({
-        data: {
-          count: counter.data.count + 1,
-        },
-      })
+        setCounterState(counterState + 1)
     )
-  }, [counter, dispatch])
+  }, [counterState, dispatch])
 
-  return [counter, addCounter]
+  return [counterState, addCounter]
 }

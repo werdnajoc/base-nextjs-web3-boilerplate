@@ -1,22 +1,28 @@
 import Script from 'next/script'
-import type { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
+import type {AppProps} from 'next/app'
+import {useRouter} from 'next/router'
+import {PersistGate} from "redux-persist/integration/react";
+import {useStore} from "react-redux";
+
 
 import 'shared/assets/styles/app.sass'
 
 import HeadGlobal from 'components/HeadGlobal'
-import { reduxWrapper } from 'providers/redux'
-import { AppProviders } from 'providers'
+import {reduxWrapper} from 'providers/redux'
+import {AppProviders} from 'providers'
 
-function App({ Component, pageProps }: AppProps) {
-  const router = useRouter()
-  return (
-    <AppProviders>
-      <HeadGlobal />
-      <Component key={router.asPath} {...pageProps} />
+function App({Component, pageProps}: AppProps) {
+    const store: any = useStore();
+    const router = useRouter()
 
-      <Script id="show-banner">
-        {`
+    return (
+        <PersistGate persistor={store.__persistor} loading={<div>Loading</div>}>
+            <AppProviders>
+                <HeadGlobal/>
+                <Component key={router.asPath} {...pageProps} />
+
+                <Script id="show-banner">
+                    {`
             (function () {
               // Change these if you use something different in your hook.
               var storageKey = 'darkMode';
@@ -55,8 +61,11 @@ function App({ Component, pageProps }: AppProps) {
               }
             })();
           `}
-      </Script>
-    </AppProviders>
-  )
+                </Script>
+            </AppProviders>
+        </PersistGate>
+
+    )
 }
+
 export default reduxWrapper.withRedux(App)

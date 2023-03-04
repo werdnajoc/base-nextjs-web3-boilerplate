@@ -2,6 +2,7 @@ import React from 'react'
 import { useNetwork, useSwitchNetwork, useAccount, useBalance, useSignMessage } from 'wagmi'
 import ConnectWallet from 'components/Connect/ConnectWallet'
 import { gql } from '@apollo/client'
+import { useSelector } from 'react-redux'
 
 import { ThemeToggleButton } from 'components/Theme'
 import { useTranslation } from 'providers/lang'
@@ -15,17 +16,11 @@ import { IncrementCounter } from 'components/IncrementCounter'
 
 import { apolloClient } from 'providers/apollo'
 import { reduxWrapper } from 'providers/redux'
-import { increment as incrementAction } from 'components/IncrementCounter/redux/actions'
+import { setCounterState } from 'components/IncrementCounter/redux/counterSlice'
 
 // @TODO graphql example for getServerSideProps and getServerSideProps
-export const getServerSideProps = reduxWrapper.getServerSideProps(store => async () => {
-  store.dispatch(
-    incrementAction({
-      data: {
-        count: 7,
-      },
-    })
-  )
+export const getServerSideProps = reduxWrapper.getServerSideProps(store => async ({ params }) => {
+  store.dispatch(setCounterState(7))
 
   const { data } = await apolloClient.query({
     query: gql`
@@ -47,6 +42,8 @@ export const getServerSideProps = reduxWrapper.getServerSideProps(store => async
 })
 
 export default function Home({ countries }: any) {
+  console.log('countries ', countries)
+
   return (
     <div className={styles.container}>
       <Header />
